@@ -3,13 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/resources/lang/es/objects.php</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/app/Http/Controllers/ConvocatoriaController.php</file>
             <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/routes/web.php</file>
             <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/app/Http/Controllers/Controller.php</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/.env</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/vendor/autoload.php</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/.gitignore</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/.env.example</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/public/index.php</file>
             <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/app/Helpers/GlobalF.php</file>
             <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/app/Http/Controllers/PostulanteController.php</file>
-            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/app/Postulante.php</file>
-            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/config/global.php</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/storage/logs/.gitignore</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/vendor/composer/autoload_real.php</file>
+            <file>file:/C:/wamp64/www/Informatica-y-Marketing/sistema_convocatoria_personal/backend/app/Convocatoria.php</file>
         </group>
     </open-files>
 </project-private>

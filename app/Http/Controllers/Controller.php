@@ -44,7 +44,7 @@ class Controller extends BaseController{
     ){
         $paramArr = $this->requestJsonDecodeArr($request);
         
-        if($object_s == 'user'){
+        if($object_s == 'usuario'){
             $pwd = hash('sha256', $paramArr['password']);
             $paramArr['password'] = $pwd;
         }
@@ -54,10 +54,11 @@ class Controller extends BaseController{
             $paramArr['idUser'] = $user->sub;
         }
         
-        $object = $objectModel;
-        $object->newObject($paramArr);
+        $object = $objectModel;        
         try{
             \DB::beginTransaction();
+            
+            $object->newObject($paramArr);
             $object->save();
 
             $data = array_add(config('global.dataSuccessMessage'), $object_s, $object);

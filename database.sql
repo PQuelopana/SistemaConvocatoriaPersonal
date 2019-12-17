@@ -105,7 +105,7 @@ Create Table Administrador(
 
 Create Table Convocatoria(
     id                          Int(255) Auto_Increment Not Null,
-    idOficial                   VarChar(10) Not Null,
+    idOficial                   Int(255) Not Null,
     nombre                      VarChar(255) Not Null,
     fechaInicio                 Date Not Null,
     fechaFin                    Date Not Null,

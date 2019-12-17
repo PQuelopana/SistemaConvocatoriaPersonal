@@ -87,12 +87,11 @@ class GlobalF{
                     'email'     => $arr['email']
                 ];                
             break;
-            case 'dish':
+            case 'convocatoria':
                 $arr = [
-                    'name'          => $arr['name'],
-                    'description'   => $arr['description'],
-                    'price'         => $arr['price'],
-                    'image'         => $arr['image']
+                    'nombre'          => $arr['nombre'],
+                    'fechaInicio'   => $arr['fechaInicio'],
+                    'fechaFin'         => $arr['fechaFin']
                 ];
             break;
             case 'order':

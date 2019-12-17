@@ -10,6 +10,12 @@ $codeSuccess = 200;
 $codeError = 400;
 $codeNotFound = 404;
 
+$convocatoriaValidator = [
+    'nombre'                                => 'required',
+    'fechaInicio'                           => 'required|date',
+    'fechaFin'                              => 'required|date'
+];
+
 $postulanteValidator = [
     'nombres'                               => 'required|alpha',
     'apellidoPaterno'                       => 'required|alpha',
@@ -85,7 +91,8 @@ return [
         'password'                      => 'required|is_alpha_num',
         'codeRestoration'              => 'required|numeric'
     ],
-    //'salestoreValidator'           => $saleValidator,
+    'convocatoriastoreValidator'           => $convocatoriaValidator,
+    'convocatoriaupdateValidator'           => $convocatoriaValidator,
     //'saleupdateValidator'          => $saleValidator,
     'salestoreDetailValidator'     => $saleDetailValidator,
     'saleupdateDetailValidator'    => $saleDetailValidator
