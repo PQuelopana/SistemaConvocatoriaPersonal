@@ -34,7 +34,7 @@ class ConvocatoriaController extends Controller{
     }
     
     public function index(){
-        return $this->indexController(new ObjectModel, $this->object_p);
+        return $this->indexController(new ObjectModel(), $this->object_p);
     }
     
     public function store(Request $request){

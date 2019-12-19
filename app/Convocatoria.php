@@ -59,4 +59,23 @@ class Convocatoria extends Model{
         
         return $idOficial;
     }
+    
+    public function index($filtro, $busqueda){
+        
+        if(is_array($filtro)){
+            $objects = Model::where($filtro);
+        }else{
+            $objects = Model::all();
+        }
+        
+        if($busqueda){
+            $objects = $objects
+            ->orwhere('idOficial', 'like', '%'.$busqueda.'%')
+            ->orWhere('nombre', 'like', '%'.$busqueda.'%');        
+        }
+        
+        $objects = $objects->get();
+        
+        return $objects;
+    }
 }

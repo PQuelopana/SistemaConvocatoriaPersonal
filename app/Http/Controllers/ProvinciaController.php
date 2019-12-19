@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Postulante As ObjectModel;
+use App\Provincia As ObjectModel;
 
-class PostulanteController extends Controller{
-    
+class ProvinciaController extends Controller{
     public $object_s;
     public $object_p;
     public $objectName;
@@ -16,8 +15,8 @@ class PostulanteController extends Controller{
         $this->middleware('api.auth', [
             'only' => [
                 //'store', 
-                'update',
-                'destroy'
+                //'update',
+                //'destroy'
             ]
         ]);
         
@@ -28,14 +27,17 @@ class PostulanteController extends Controller{
             ]
         ]);
         
-        $this->object_s = 'postulante';
-        $this->object_p = 'postulantes';
+        $this->object_s = 'provincia';
+        $this->object_p = 'provincias';
         $this->objectName = trans('objects.'.$this->object_s);
         $this->objectNameArr = ['object' => $this->objectName];
     }
     
-    public function store(Request $request){
-        return $this->storeController($request, new ObjectModel(), $this->object_s, $this->objectNameArr);
+    public function index(){
+        return $this->indexController(new ObjectModel(), $this->object_p, '', null, ['nombre', 'Asc']);
     }
     
+    public function indexByIdDepartamento($idDepartamento){
+        return $this->indexController(new ObjectModel(), $this->object_p, '', ['idDepartamento' => $idDepartamento], ['nombre', 'Asc']);
+    }
 }

@@ -7,6 +7,11 @@
  */
 
 return [
-    'postulante'    => 'Postulante',
-    'convocatoria'  => 'Convocatoria'
+    'postulante'                => 'Postulante',
+    'convocatoria'              => 'Convocatoria',
+    'pais'                      => 'País',
+    'tipodocumentoidentidad'    => 'TipoDocumentoIdentidad',
+    'departamento'              => 'Departamento',
+    'provincia'                 => 'Provincia',
+    'distrito'                  => 'Distritos'
 ];

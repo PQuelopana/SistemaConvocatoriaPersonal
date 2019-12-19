@@ -17,22 +17,21 @@ $convocatoriaValidator = [
 ];
 
 $postulanteValidator = [
-    'nombres'                               => 'required|alpha',
+    'nombres'                               => 'required',
     'apellidoPaterno'                       => 'required|alpha',
     'apellidoMaterno'                       => 'required|alpha',
     'idTipoDocumentoIdentidad'              => 'required|numeric',
     'numeroDocumentoIdentidad'              => 'required',
     'correo'                                => 'required|email|unique:Postulante',
-    'contraseña'                            => 'required|is_alpha_num',
-    'estadoCivil'                           => 'requiredalpha',
+    'contrasenna'                           => 'required|is_alpha_num',
+    'estadoCivil'                           => 'required|alpha',
     'idDistrito'                            => 'required|numeric',
     'tipoZona'                              => 'required|alpha',
     'nombreZona'                            => 'required',
     'tipoVia'                               => 'required|alpha',
     'direccion'                             => 'required',
     'telefono'                              => 'required',
-    'celular'                               => 'required',
-    'firmaElectronica'                      => 'required'
+    'celular'                               => 'required'
 ];
         
 $saleDetailValidator = [
@@ -93,6 +92,7 @@ return [
     ],
     'convocatoriastoreValidator'           => $convocatoriaValidator,
     'convocatoriaupdateValidator'           => $convocatoriaValidator,
+    'postulantestoreValidator'           => $postulanteValidator,
     //'saleupdateValidator'          => $saleValidator,
     'salestoreDetailValidator'     => $saleDetailValidator,
     'saleupdateDetailValidator'    => $saleDetailValidator

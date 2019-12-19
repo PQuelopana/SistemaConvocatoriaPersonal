@@ -10,12 +10,28 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController{
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
-    public function indexController($objectModel, $object_p, $loads = '', $filter = null){
-        if(is_array($filter)){
-            $object = $objectModel::where($filter)->get();
-        }else{
-            $object = $objectModel::all();
+    public function indexController(
+        $objectModel, 
+        $object_p, 
+        $loads = '', 
+        $filter = null/*['campo' => 'valor']*/, 
+        $orderBy = null
+    ){
+        
+        if(is_null($orderBy)){
+            $orderBy = [
+                'id',
+                'Asc'
+            ];
         }
+        
+        if(is_array($filter)){
+            $object = $objectModel::where($filter)->orderBy($orderBy[0], $orderBy[1]);           
+        }else{
+            $object = $objectModel::orderBy($orderBy[0], $orderBy[1]);
+        }
+        
+        $object = $object->get();
         
         $this->loads($object, $loads);
         
@@ -44,10 +60,12 @@ class Controller extends BaseController{
     ){
         $paramArr = $this->requestJsonDecodeArr($request);
         
-        if($object_s == 'usuario'){
-            $pwd = hash('sha256', $paramArr['password']);
-            $paramArr['password'] = $pwd;
+        /*
+        if($object_s == 'postulante'){
+            $pwd = hash('sha256', $paramArr['contraseña']);
+            $paramArr['contraseña'] = $pwd;
         }
+        */
         
         if($storeUserId){
             $user = $this->getIdentity($request);

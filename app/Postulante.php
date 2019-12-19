@@ -16,7 +16,9 @@ class Postulante extends Model{
         $this->idTipoDocumentoIdentidad = $paramArr['idTipoDocumentoIdentidad'];
         $this->numeroDocumentoIdentidad = $paramArr['numeroDocumentoIdentidad'];
         $this->correo = $paramArr['correo'];
-        $this->contraseña = $paramArr['contraseña'];
+        
+        $this->contrasenna = hash('sha256', $paramArr['contrasenna']);
+        
         $this->estadoCivil = $paramArr['estadoCivil'];
         $this->idDistrito = $paramArr['idDistrito'];
         $this->tipoZona = $paramArr['tipoZona'];
@@ -25,7 +27,9 @@ class Postulante extends Model{
         $this->direccion = $paramArr['direccion'];
         $this->telefono = $paramArr['telefono'];
         $this->celular = $paramArr['celular'];
-        $this->firmaElectronica = $paramArr['firmaElectronica'];
+        
+        $this->firmaElectronica = hash('sha256', $paramArr['nombres'].$paramArr['apellidoPaterno'].$paramArr['apellidoMaterno'].$paramArr['numeroDocumentoIdentidad']);
+        
         $this->idColegioProfesional = null;
         $this->numeroRegistro = '';
         $this->indDiscapacidad = 0;
@@ -39,6 +43,6 @@ class Postulante extends Model{
     }
     
     protected $hidden = [
-        'contraseña', 'codigoRestauracion'
+        'contrasenna', 'codigoRestauracion'
     ];
 }
